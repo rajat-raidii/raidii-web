@@ -1,0 +1,44 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Hexagonal R design -->
+  <g transform="translate(10, 10)">
+    <!-- Hexagon background -->
+    <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" 
+             fill="url(#gradient2)" 
+             opacity="0.1"/>
+    
+    <!-- R letter in hexagon -->
+    <path d="M8 8 L8 32 L12 32 L12 20 L18 20 L24 32 L28 32 L22 20 L18 20 L18 8 Z" 
+          fill="url(#gradient2)"/>
+    
+    <!-- Diagonal stroke -->
+    <path d="M18 20 L24 8 L28 8 L22 20 Z" 
+          fill="url(#gradient2)"/>
+    
+    <!-- AI circuit pattern -->
+    <rect x="32" y="12" width="2" height="8" fill="url(#accent2)" opacity="0.8"/>
+    <rect x="36" y="14" width="2" height="4" fill="url(#accent2)" opacity="0.6"/>
+    <circle cx="34" cy="24" r="1.5" fill="url(#accent2)" opacity="0.7"/>
+  </g>
+  
+  <!-- Company name with tech styling -->
+  <text x="70" y="25" font-family="Inter, sans-serif" 
+        font-size="26" font-weight="800" fill="url(#gradient2)" 
+        letter-spacing="2px">RAIDII</text>
+  
+  <!-- Tech tagline -->
+  <text x="70" y="42" font-family="Inter, sans-serif" 
+        font-size="9" font-weight="600" fill="#64748b" 
+        letter-spacing="1px">AI ENTERPRISE</text>
+</svg>

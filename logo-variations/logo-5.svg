@@ -1,0 +1,61 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accent5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glow5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Abstract R with flowing design -->
+  <g transform="translate(8, 8)">
+    <!-- Flowing R design -->
+    <path d="M8 8 Q12 8 12 12 L12 20 Q12 24 16 24 L20 24 Q24 24 24 20 L24 16 Q24 12 20 12 L16 12 Q12 12 12 16 L12 20 Q12 24 16 24 L20 24 Q24 24 24 20 L24 8 Q24 4 20 4 L8 4 Q4 4 4 8 Z" 
+          fill="url(#gradient5)" 
+          opacity="0.9"/>
+    
+    <!-- Simplified R -->
+    <path d="M8 8 L8 36 L12 36 L12 20 L18 20 L24 36 L28 36 L22 20 L18 20 L18 8 Z" 
+          fill="url(#gradient5)"/>
+    
+    <!-- Diagonal stroke -->
+    <path d="M18 20 L24 8 L28 8 L22 20 Z" 
+          fill="url(#gradient5)"/>
+    
+    <!-- AI wave pattern -->
+    <path d="M32 12 Q34 8 36 12 Q38 16 40 12 Q42 8 44 12" 
+          stroke="url(#accent5)" 
+          stroke-width="2" 
+          fill="none" 
+          opacity="0.8"/>
+    <path d="M32 20 Q34 16 36 20 Q38 24 40 20" 
+          stroke="url(#accent5)" 
+          stroke-width="1.5" 
+          fill="none" 
+          opacity="0.6"/>
+    <path d="M32 28 Q34 24 36 28 Q38 32 40 28" 
+          stroke="url(#accent5)" 
+          stroke-width="1" 
+          fill="none" 
+          opacity="0.4"/>
+  </g>
+  
+  <!-- Company name with flow -->
+  <text x="70" y="25" font-family="Inter, sans-serif" 
+        font-size="24" font-weight="600" fill="url(#gradient5)" 
+        letter-spacing="1px">RAIDII</text>
+  
+  <!-- Flowing tagline -->
+  <text x="70" y="42" font-family="Inter, sans-serif" 
+        font-size="9" font-weight="400" fill="#94a3b8" 
+        letter-spacing="1.5px">AI ENTERPRISE</text>
+</svg>

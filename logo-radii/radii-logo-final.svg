@@ -1,0 +1,86 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1d4ed8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="sweepGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:0.3" />
+    </radialGradient>
+    
+    <filter id="sweepGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="pulseGlow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Enhanced radar display with unique styling -->
+  <g transform="translate(8, 8)">
+    <!-- Outer radar ring with tech styling -->
+    <circle cx="22" cy="22" r="18" fill="none" stroke="url(#radarGradient)" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Concentric circles (radii) with varying opacity -->
+    <circle cx="22" cy="22" r="15" fill="none" stroke="url(#radarGradient)" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="22" cy="22" r="12" fill="none" stroke="url(#radarGradient)" stroke-width="1.2" opacity="0.5"/>
+    <circle cx="22" cy="22" r="9" fill="none" stroke="url(#radarGradient)" stroke-width="1" opacity="0.4"/>
+    <circle cx="22" cy="22" r="6" fill="none" stroke="url(#radarGradient)" stroke-width="0.8" opacity="0.3"/>
+    <circle cx="22" cy="22" r="3" fill="none" stroke="url(#radarGradient)" stroke-width="0.6" opacity="0.2"/>
+    
+    <!-- Grid lines for precision -->
+    <line x1="4" y1="22" x2="40" y2="22" stroke="url(#radarGradient)" stroke-width="0.5" opacity="0.3"/>
+    <line x1="22" y1="4" x2="22" y2="40" stroke="url(#radarGradient)" stroke-width="0.5" opacity="0.3"/>
+    <line x1="7" y1="7" x2="37" y2="37" stroke="url(#radarGradient)" stroke-width="0.3" opacity="0.2"/>
+    <line x1="37" y1="7" x2="7" y2="37" stroke="url(#radarGradient)" stroke-width="0.3" opacity="0.2"/>
+    
+    <!-- Dynamic radar sweep with enhanced glow -->
+    <line x1="22" y1="22" x2="38" y2="6" stroke="url(#sweepGradient)" stroke-width="3" opacity="0.9" filter="url(#sweepGlow)"/>
+    <line x1="22" y1="22" x2="38" y2="22" stroke="url(#sweepGradient)" stroke-width="2.5" opacity="0.7" filter="url(#sweepGlow)"/>
+    <line x1="22" y1="22" x2="38" y2="38" stroke="url(#sweepGradient)" stroke-width="2" opacity="0.5" filter="url(#sweepGlow)"/>
+    
+    <!-- Target blips with unique styling -->
+    <circle cx="30" cy="10" r="2" fill="url(#sweepGradient)" opacity="0.9" filter="url(#pulseGlow)"/>
+    <circle cx="34" cy="30" r="1.5" fill="url(#sweepGradient)" opacity="0.8" filter="url(#pulseGlow)"/>
+    <circle cx="10" cy="32" r="1.2" fill="url(#sweepGradient)" opacity="0.7" filter="url(#pulseGlow)"/>
+    <circle cx="14" cy="14" r="1" fill="url(#sweepGradient)" opacity="0.6" filter="url(#pulseGlow)"/>
+    
+    <!-- Center hub with enhanced glow -->
+    <circle cx="22" cy="22" r="2" fill="url(#centerGlow)"/>
+    <circle cx="22" cy="22" r="1" fill="url(#sweepGradient)"/>
+    
+    <!-- Unique corner brackets for tech feel -->
+    <path d="M4 4 L8 4 L8 6 L6 6 L6 8 L4 8 Z" fill="url(#sweepGradient)" opacity="0.6"/>
+    <path d="M36 4 L40 4 L40 8 L38 8 L38 6 L36 6 Z" fill="url(#sweepGradient)" opacity="0.6"/>
+    <path d="M4 36 L6 36 L6 38 L8 38 L8 40 L4 40 Z" fill="url(#sweepGradient)" opacity="0.6"/>
+    <path d="M36 36 L40 36 L40 40 L38 40 L38 38 L36 38 Z" fill="url(#sweepGradient)" opacity="0.6"/>
+  </g>
+  
+  <!-- Enhanced company name with tech styling -->
+  <text x="70" y="25" font-family="Inter, sans-serif" 
+        font-size="26" font-weight="800" fill="url(#radarGradient)" 
+        letter-spacing="2px">RAIDII</text>
+  
+  <!-- Unique tagline -->
+  <text x="70" y="42" font-family="Inter, sans-serif" 
+        font-size="10" font-weight="600" fill="#10b981" 
+        letter-spacing="1px">RADAR AI</text>
+</svg>

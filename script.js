@@ -108,7 +108,10 @@ function handleSubmit(event) {
 }
 
 // Mobile menu toggle
-function toggleMobileMenu() {
+function toggleMobileMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
     const navLinks = document.getElementById('nav-links');
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('nav-overlay');
@@ -135,9 +138,9 @@ function closeMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('nav-overlay');
     
-    navLinks.classList.remove('nav-links-active');
-    hamburger.classList.remove('hamburger-active');
-    overlay.classList.remove('nav-overlay-active');
+    if (navLinks) navLinks.classList.remove('nav-links-active');
+    if (hamburger) hamburger.classList.remove('hamburger-active');
+    if (overlay) overlay.classList.remove('nav-overlay-active');
 }
 
 // Add smooth scrolling to all anchor links
@@ -167,10 +170,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const overlay = document.getElementById('nav-overlay');
         
         // Check if menu is open and click is outside menu
-        if (navLinks.classList.contains('nav-links-active') && 
+        if (navLinks && navLinks.classList.contains('nav-links-active') && 
             !navLinks.contains(event.target) && 
-            !hamburger.contains(event.target)) {
+            !hamburger.contains(event.target) &&
+            !overlay.contains(event.target)) {
             closeMobileMenu();
+        }
+    });
+    
+    // Close menu when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks && navLinks.classList.contains('nav-links-active')) {
+                closeMobileMenu();
+            }
         }
     });
     

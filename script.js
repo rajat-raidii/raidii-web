@@ -1,7 +1,8 @@
 // Smooth scrolling for navigation links
 function scrollToContact() {
     document.getElementById('contact').scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'start'
     });
 }
 
@@ -13,9 +14,9 @@ function scrollToSolutions() {
 
 // Contact form handling
 function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission
     
-    // Get form data
+    // Basic validation before submission
     const formData = new FormData(event.target);
     const data = {
         name: formData.get('name'),
@@ -37,26 +38,36 @@ function handleSubmit(event) {
         return;
     }
     
-    // Simulate form submission
+    // Show loading state
     const submitButton = event.target.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
-    // Simulate API call
-    setTimeout(() => {
-        // In a real implementation, you would send this data to your server
-        console.log('Form submitted:', data);
-        
-        // Show success message
-        alert('Thank you for your message! We\'ll get back to you soon.');
-        
-        // Reset form
-        event.target.reset();
+    // Submit to PHP backend
+    fetch('contact-handler.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            event.target.reset(); // Reset form
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-    }, 1500);
+    });
 }
 
 // Add smooth scrolling to all anchor links

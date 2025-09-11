@@ -111,18 +111,22 @@ function handleSubmit(event) {
 function toggleMobileMenu() {
     const navLinks = document.getElementById('nav-links');
     const hamburger = document.getElementById('hamburger');
+    const overlay = document.getElementById('nav-overlay');
     
     navLinks.classList.toggle('nav-links-active');
     hamburger.classList.toggle('hamburger-active');
+    overlay.classList.toggle('nav-overlay-active');
 }
 
 // Close mobile menu when clicking on a link
 function closeMobileMenu() {
     const navLinks = document.getElementById('nav-links');
     const hamburger = document.getElementById('hamburger');
+    const overlay = document.getElementById('nav-overlay');
     
     navLinks.classList.remove('nav-links-active');
     hamburger.classList.remove('hamburger-active');
+    overlay.classList.remove('nav-overlay-active');
 }
 
 // Add smooth scrolling to all anchor links
@@ -138,6 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
+    
+    // Close menu when clicking on overlay
+    const overlay = document.getElementById('nav-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeMobileMenu);
+    }
     
     // Add smooth scrolling to all internal links
     const links = document.querySelectorAll('a[href^="#"]');

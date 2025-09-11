@@ -107,8 +107,38 @@ function handleSubmit(event) {
     });
 }
 
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.getElementById('hamburger');
+    
+    navLinks.classList.toggle('nav-links-active');
+    hamburger.classList.toggle('hamburger-active');
+}
+
+// Close mobile menu when clicking on a link
+function closeMobileMenu() {
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.getElementById('hamburger');
+    
+    navLinks.classList.remove('nav-links-active');
+    hamburger.classList.remove('hamburger-active');
+}
+
 // Add smooth scrolling to all anchor links
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu event listeners
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
     // Add smooth scrolling to all internal links
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {

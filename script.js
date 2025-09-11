@@ -12,7 +12,44 @@ function scrollToSolutions() {
     });
 }
 
-// Contact form handling
+// Contact form handling for Formspree
+function handleFormspreeSubmit(event) {
+    // Basic validation before submission
+    const formData = new FormData(event.target);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: formData.get('company'),
+        message: formData.get('message')
+    };
+    
+    // Basic validation
+    if (!data.name || !data.email || !data.message) {
+        event.preventDefault();
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+        event.preventDefault();
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Show loading state
+    const submitButton = event.target.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    // Let Formspree handle the submission
+    // The form will submit naturally to Formspree
+}
+
+// Contact form handling for PHP backend (fallback)
 function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission
     

@@ -1,0 +1,21 @@
+{
+    "name": "Raidii - AI Powered Enterprise Products",
+    "short_name": "Raidii",
+    "description": "AI Powered Enterprise Products for modern businesses",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a2e'/><circle cx='16' cy='16' r='10' fill='none' stroke='%237877c6' stroke-width='2'/><circle cx='16' cy='16' r='6' fill='none' stroke='%237877c6' stroke-width='1.5'/><circle cx='16' cy='16' r='2' fill='%237877c6'/></svg>",
+            "sizes": "32x32",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#7877c6",
+    "background_color": "#1a1a2e",
+    "display": "standalone",
+    "start_url": "/"
+}

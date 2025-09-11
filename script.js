@@ -113,9 +113,20 @@ function toggleMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('nav-overlay');
     
-    navLinks.classList.toggle('nav-links-active');
-    hamburger.classList.toggle('hamburger-active');
-    overlay.classList.toggle('nav-overlay-active');
+    // Check if menu is currently open
+    const isOpen = navLinks.classList.contains('nav-links-active');
+    
+    if (isOpen) {
+        // Close menu
+        navLinks.classList.remove('nav-links-active');
+        hamburger.classList.remove('hamburger-active');
+        overlay.classList.remove('nav-overlay-active');
+    } else {
+        // Open menu
+        navLinks.classList.add('nav-links-active');
+        hamburger.classList.add('hamburger-active');
+        overlay.classList.add('nav-overlay-active');
+    }
 }
 
 // Close mobile menu when clicking on a link
@@ -148,6 +159,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (overlay) {
         overlay.addEventListener('click', closeMobileMenu);
     }
+    
+    // Close menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        const navLinks = document.getElementById('nav-links');
+        const hamburger = document.getElementById('hamburger');
+        const overlay = document.getElementById('nav-overlay');
+        
+        // Check if menu is open and click is outside menu
+        if (navLinks.classList.contains('nav-links-active') && 
+            !navLinks.contains(event.target) && 
+            !hamburger.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
     
     // Add smooth scrolling to all internal links
     const links = document.querySelectorAll('a[href^="#"]');
